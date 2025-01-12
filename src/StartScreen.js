@@ -1,4 +1,7 @@
-function StartScreen({ questionsNum, dispatch }) {
+import { useQuestion } from "./context/QuestionContext";
+
+function StartScreen() {
+  const { dispatch, questionsNum } = useQuestion();
   function handleStartGame() {
     dispatch({ type: "start" });
   }

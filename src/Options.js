@@ -1,4 +1,7 @@
-function Options({ question, answer, dispatch }) {
+import { useQuestion } from "./context/QuestionContext";
+
+function Options({ question }) {
+  const { answer, dispatch } = useQuestion();
   return (
     <div className="options">
       {question.options.map((answers, i) => (

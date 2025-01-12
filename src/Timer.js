@@ -1,6 +1,8 @@
 import { useEffect } from "react";
+import { useQuestion } from "./context/QuestionContext";
 
-function Timer({ timerDown, dispatch, timer }) {
+function Timer() {
+  const { timerDown, dispatch } = useQuestion();
   function showTime() {
     const min = String(Math.floor(timerDown / 60)).padStart(2, "0");
     const sec = String(Math.floor(timerDown % 60)).padStart(2, "0");
